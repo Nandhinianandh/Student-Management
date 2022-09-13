@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Students Management System</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<!--Brand-->
+		<a class="navbar-brand" href="#">Student Management System</a>
+		<!-- Navbar Links-->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/home}">Go Back</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<h1> List Students </h1>
+		</div>
+		<br>
+		<div>
+			<table class="table table-success table-striped table-hover">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">First Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">Date</th>
+						<th scope="col">Nationality</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="student: ${students}">
+						<td th:text="${student.firstName}"></td>
+						<td th:text="${student.lastName}"></td>
+						<td th:text="${student.date}"></td>
+						<td th:text="${student.nationality}"></td>
+
+					</tr>
+
+				</tbody>
+			</table>
+			</table>
+		</div>
+	</div>
+
+</body>
+
+</html>
